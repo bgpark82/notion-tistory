@@ -1,22 +1,18 @@
-import {ApiClient} from "../index";
-import {BlockListResponse} from "./BlockListResponse";
+import {BlockListResponse} from "./list/BlockListResponse";
+import {notionClient} from "./index";
 
 class NotionApi {
-
-    constructor(apiClient) {
-        this.apiClient = apiClient;
-    }
 
     /**
      * @param {BlockListRequest}
      * @returns {BlockListResponse}
      */
     async list(request) {
-        const response = await this.apiClient.get(`blocks/${request.pageId}/children?page_size=${request.pageSize}`);
+        const response = await notionClient.get(`/blocks/${request.pageId}/children?page_size=${request.pageSize}`);
         return new BlockListResponse(response);
     }
 }
 
-const notionApi = new NotionApi(new ApiClient(`http://localhost:3000/api/v1/`));
+const notionApi = new NotionApi();
 
 export { notionApi }

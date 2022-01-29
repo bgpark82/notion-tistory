@@ -1,5 +1,5 @@
 import {notionApi} from "../../../popup/api/notion/notion";
-import {BlockListRequest} from "../../../popup/api/notion/BlockListRequest";
+import {BlockListRequest} from "../../../popup/api/notion/list/BlockListRequest";
 
 describe("노션 API 테스트", () => {
 
