@@ -1,5 +1,6 @@
 import {PostSaveResponse} from "./save/PostSaveResponse";
 import {tistoryClient} from "./index";
+import qs from "qs";
 
 class TistoryApi {
 
@@ -8,7 +9,8 @@ class TistoryApi {
      * @returns {PostSaveResponse}
      */
     async post(request) {
-        const response = await tistoryClient.post(`/apis/post/write?access_token=${request.token}&title=${(encodeURI(request.title))}&blogName=${request.blog}&content=${encodeURIComponent(request.content)}`);
+        const query = qs.stringify(request, value => encodeURIComponent(value));
+        const response = await tistoryClient.post(`/apis/post/write?${query}`);
         return new PostSaveResponse(response);
     }
 }

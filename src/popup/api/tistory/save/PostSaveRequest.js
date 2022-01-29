@@ -9,8 +9,8 @@ class PostSaveRequest {
     constructor(title, content, blog, token) {
         this.title = title;
         this.content = content;
-        this.blog = blog;
-        this.token = token;
+        this.blogName = blog;
+        this.access_token = token;
     }
 }
 

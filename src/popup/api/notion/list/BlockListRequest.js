@@ -5,8 +5,8 @@ class BlockListRequest {
      * @param {number} pageSize 페이지 사이즈
      */
     constructor(pageId, pageSize) {
-        this.pageId = pageId;
-        this.pageSize = pageSize;
+        this.page_id = pageId;
+        this.page_size = pageSize;
     }
 }
 
