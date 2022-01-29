@@ -1,4 +1,4 @@
-import upload from "./api/upload";
+import upload from "./service/upload";
 
 const $id = document.getElementById("block-id")
 const $title = document.getElementById("block-title");
