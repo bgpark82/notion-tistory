@@ -1,4 +1,4 @@
-import upload from "./service/upload";
+import {postService} from "./service/post";
 
 const $id = document.getElementById("block-id")
 const $title = document.getElementById("block-title");
@@ -10,8 +10,6 @@ chrome.storage.sync.get("block", ({block}) => {
 });
 
 $button.addEventListener('click', async () => {
-    const response = await upload($id.innerHTML, $title.innerHTML);
-    if (response) {
-        alert("업로드되었습니다")
-    }
+    const response = await postService.post($id.innerHTML, $title.innerHTML);
+    alert(response)
 })
