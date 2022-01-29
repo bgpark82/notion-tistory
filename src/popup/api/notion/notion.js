@@ -1,6 +1,6 @@
 import {BlockListResponse} from "./list/BlockListResponse";
-import {notionClient} from "./index";
 import qs from "qs";
+import {notionClient} from "../index";
 
 class NotionApi {
 

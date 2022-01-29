@@ -1,6 +1,6 @@
 import {PostSaveResponse} from "./save/PostSaveResponse";
-import {tistoryClient} from "./index";
 import qs from "qs";
+import {tistoryClient} from "../index";
 
 class TistoryApi {
 
