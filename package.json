@@ -1,0 +1,22 @@
+{
+  "name": "notion-tistory",
+  "version": "1.0.0",
+  "description": "notion-tistory",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "notion-tistory"
+  ],
+  "author": "bgpark",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
