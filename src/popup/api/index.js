@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class ApiClient {
 
     constructor(baseUrl) {
@@ -5,14 +7,12 @@ class ApiClient {
     }
 
     async get(url) {
-        const response = await fetch(this.baseUrl + url);
-        return await response.json();
+        return await axios(this.baseUrl + url);
     }
 
     async post(url, option) {
         const base = { method : 'POST'}
-        const response = await fetch(this.baseUrl + url, {...base, ...option});
-        return await response.json();
+        return await axios(this.baseUrl + url, {...base, ...option});
     }
 }
 

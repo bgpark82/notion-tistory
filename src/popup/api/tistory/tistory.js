@@ -1,4 +1,5 @@
 import {ApiClient} from "../index";
+import {PostSaveResponse} from "./PostSaveResponse";
 
 class TistoryApi {
 
@@ -8,10 +9,11 @@ class TistoryApi {
 
     /**
      * @param {PostSaveRequest}
-     * @returns {Promise<any>}
+     * @returns {PostSaveResponse}
      */
     async post(request) {
-        return await this.apiClient.post(`/apis/post/write?access_token=${request.token}&title=${(encodeURI(request.title))}&blogName=${request.blog}&content=${encodeURIComponent(request.content)}`);
+        const response = await this.apiClient.post(`/apis/post/write?access_token=${request.token}&title=${(encodeURI(request.title))}&blogName=${request.blog}&content=${encodeURIComponent(request.content)}`);
+        return new PostSaveResponse(response);
     }
 }
 

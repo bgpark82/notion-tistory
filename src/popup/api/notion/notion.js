@@ -1,4 +1,5 @@
 import {ApiClient} from "../index";
+import {BlockListResponse} from "./BlockListResponse";
 
 class NotionApi {
 
@@ -8,10 +9,11 @@ class NotionApi {
 
     /**
      * @param {BlockListRequest}
-     * @returns {Promise<any>}
+     * @returns {BlockListResponse}
      */
     async list(request) {
-        return await this.apiClient.get(`blocks/${request.pageId}/children?page_size=${request.pageSize}`)
+        const response = await this.apiClient.get(`blocks/${request.pageId}/children?page_size=${request.pageSize}`);
+        return new BlockListResponse(response);
     }
 }
 
