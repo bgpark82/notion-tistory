@@ -11,5 +11,7 @@ chrome.storage.sync.get("block", ({block}) => {
 
 $button.addEventListener('click', async () => {
     const response = await postService.post($id.innerHTML, $title.innerHTML);
-    alert(response)
+    if (response.status === 200) {
+        alert("업로드 되었습니다")
+    }
 })
