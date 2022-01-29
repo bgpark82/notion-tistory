@@ -2,8 +2,12 @@ const BASE_URL = `http://localhost:3000`;
 
 class NotionApi {
 
-    async list(blockId, pageSize) {
-        const response = await fetch(`${BASE_URL}/api/v1/blocks/${blockId}/children?page_size=${pageSize}`)
+    /**
+     * @param {BlockListRequest}
+     * @returns {Promise<any>}
+     */
+    async list(request) {
+        const response = await fetch(`${BASE_URL}/api/v1/blocks/${request.pageId}/children?page_size=${request.pageSize}`)
         return await response.json();
     }
 }
