@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/runtime": "^7.16.7",
     "axios": "^0.25.0",
-    "babel-jest": "^27.4.6"
+    "babel-jest": "^27.4.6",
+    "dotenv": "^14.3.2"
   }
 }
